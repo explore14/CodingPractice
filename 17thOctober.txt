@@ -43,3 +43,7 @@ class Solution {
         return maxNumber;
     }
 }
+
+****Complexity****
+Time: O(n)
+Space: O(n)
