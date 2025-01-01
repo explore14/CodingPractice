@@ -1,0 +1,55 @@
+796. Rotate String
+
+Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
+
+A shift on s consists of moving the leftmost character of s to the rightmost position.
+
+For example, if s = "abcde", then it will be "bcdea" after one shift.
+ 
+
+Example 1:
+
+Input: s = "abcde", goal = "cdeab"
+Output: true
+Example 2:
+
+Input: s = "abcde", goal = "abced"
+Output: false
+ 
+
+Constraints:
+
+1 <= s.length, goal.length <= 100
+s and goal consist of lowercase English letters.
+
+******************CODE********************
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        if(s.length()!=goal.length()){
+            return false;
+        }
+        String str=s;
+        for(int start=0;start<s.length();start++){
+            str=charS(str);
+            if(goal.equals(str)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public String charS(String s){
+        char[] temp=s.toCharArray();
+        int n=s.length();
+        char end=temp[n-1];
+        for(int i=n-1;i>0;i--){
+            temp[i]=temp[i-1];
+        }
+        temp[0]=end;
+        //System.out.println(temp);
+        return new String(temp);
+
+    }
+}
+********Complexity*********
+time:O(n^2)
+space:O(n)
