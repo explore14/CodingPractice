@@ -39,6 +39,7 @@ Constraints:
 The string s consists of characters '0' and '1' only.
  */
 //CODE
+//Brute force approach
 class Solution {
     public int maxScore(String s) {
         int z=0,o=0,max=0;
